@@ -1,148 +1,126 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Award, Zap } from "lucide-react";
+import { ExternalLink, TrendingUp, BarChart3, PieChart } from "lucide-react";
 
 const Portfolio = () => {
-  const projects = [
+  const metrics = [
     {
-      title: "E-Commerce Empire",
-      category: "Web Development",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
-      description: "Revolutionary e-commerce platform with AI-powered recommendations and seamless payment integration",
-      tech: ["React", "Node.js", "Stripe", "MongoDB"],
-      gradient: "bg-gradient-primary",
-      impact: "300% Sales Increase"
+      icon: TrendingUp,
+      title: "Price Stability",
+      value: "$1.00",
+      change: "+0.01%",
+      description: "Maintaining stable value across market conditions",
+      chart: "Linear growth trend"
     },
     {
-      title: "SaaS Dashboard Pro",
-      category: "UI/UX Design",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-      description: "Next-generation analytics dashboard with real-time data visualization and intuitive user experience",
-      tech: ["Figma", "React", "TypeScript", "D3.js"],
-      gradient: "bg-gradient-secondary",
-      impact: "95% User Satisfaction"
+      icon: BarChart3,
+      title: "Total Supply",
+      value: "45.2M IST",
+      change: "+12.5%",
+      description: "Growing adoption across multiple chains",
+      chart: "Volume distribution"
     },
     {
-      title: "FinTech Mobile App",
-      category: "Mobile Design",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
-      description: "Ultra-secure mobile banking app with biometric authentication and instant transactions",
-      tech: ["React Native", "Firebase", "Biometrics"],
-      gradient: "bg-gradient-accent",
-      impact: "1M+ Downloads"
-    },
-    {
-      title: "Gourmet Restaurant Hub",
-      category: "Web Development",
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
-      description: "Elegant restaurant ecosystem with online reservations, menu management, and loyalty programs",
-      tech: ["Next.js", "Sanity CMS", "Stripe"],
-      gradient: "bg-gradient-primary",
-      impact: "250% Bookings Up"
-    },
-    {
-      title: "Creative Portfolio Studio",
-      category: "Creative Design",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80",
-      description: "Immersive portfolio experience showcasing photography and digital art with 3D interactions",
-      tech: ["Three.js", "GSAP", "WebGL"],
-      gradient: "bg-gradient-secondary",
-      impact: "500% Engagement"
-    },
-    {
-      title: "Fitness Revolution App",
-      category: "Mobile App",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80",
-      description: "AI-powered fitness companion with personalized workouts and social challenges",
-      tech: ["Flutter", "AWS", "TensorFlow"],
-      gradient: "bg-gradient-accent",
-      impact: "Top 10 Health App"
+      icon: PieChart,
+      title: "Collateralization",
+      value: "155%",
+      change: "+3.2%",
+      description: "Over-collateralized for maximum security",
+      chart: "Asset allocation"
     }
   ];
 
+  const integrations = [
+    { name: "Osmosis", type: "DEX", status: "Live" },
+    { name: "Cosmos Hub", type: "Network", status: "Live" },
+    { name: "Juno", type: "Smart Contracts", status: "Live" },
+    { name: "Stargaze", type: "NFT Platform", status: "Live" },
+    { name: "Secret Network", type: "Privacy", status: "Coming Soon" },
+    { name: "Evmos", type: "EVM", status: "Coming Soon" }
+  ];
+
   return (
-    <section id="portfolio" className="py-24 bg-gradient-to-b from-muted/10 via-background to-muted/10 relative overflow-hidden">
+    <section id="portfolio" className="py-16 sm:py-20 lg:py-24 bg-background relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-32 left-32 w-80 h-80 bg-gradient-primary rounded-full blur-3xl opacity-15 float-animation"></div>
-        <div className="absolute bottom-32 right-32 w-96 h-96 bg-gradient-secondary rounded-full blur-3xl opacity-10 float-animation" style={{ animationDelay: '-3s' }}></div>
+        <div className="absolute top-20 left-20 w-56 h-56 bg-gradient-primary rounded-full opacity-10 blur-3xl float-animation"></div>
+        <div className="absolute bottom-20 right-20 w-72 h-72 bg-gradient-secondary rounded-full opacity-8 blur-3xl float-animation" style={{ animationDelay: '-4s' }}></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 rounded-full glass border border-white/20 mb-6 animate-fade-up-bold">
-            <Award className="h-5 w-5 text-primary mr-2" />
-            <span className="text-primary font-bold">Our Masterpieces</span>
-          </div>
-          
-          <h2 className="text-5xl md:text-7xl font-black mb-8 animate-fade-up-bold delay-100 text-shadow">
-            Portfolio of <span className="text-gradient-rainbow">Excellence</span>
+      <div className="container-xl responsive-padding relative z-10">
+        <div className="text-center mb-16 sm:mb-20">
+          <h2 className="heading-lg mb-6 sm:mb-8 text-foreground animate-fade-up">
+            IST <span className="text-gradient-accent">Analytics</span>
           </h2>
-          <p className="text-2xl text-muted-foreground max-w-4xl mx-auto animate-fade-up-bold delay-200 font-medium">
-            Discover our latest projects and see how we transform 
-            <span className="text-gradient-primary font-bold"> bold ideas</span> into 
-            <span className="text-gradient-secondary font-bold"> extraordinary digital experiences</span>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-up delay-200">
+            Real-time metrics and performance data showcasing IST's stability and growth 
+            across the interchain ecosystem.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projects.map((project, index) => (
+        {/* Metrics Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 mb-16 sm:mb-20">
+          {metrics.map((metric, index) => (
             <Card 
-              key={project.title} 
-              className={`group hover-lift-bold overflow-hidden border-0 shadow-2xl animate-fade-up-bold delay-${(index + 1) * 75} glass border-white/30 relative`}
+              key={metric.title} 
+              className={`border-2 border-muted hover:border-accent/30 transition-all duration-500 scale-hover animate-fade-up delay-${(index + 1) * 150} group bg-card/60 backdrop-blur-sm relative overflow-hidden`}
             >
-              <div className="absolute top-4 right-4 z-20">
-                <div className={`px-3 py-1 rounded-full text-xs font-bold text-white ${project.gradient} shadow-lg`}>
-                  {project.impact}
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              <div className="relative overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4 flex gap-3">
-                    <Button size="sm" className="bg-white/20 glass text-white hover:bg-white/30 magnetic-bold rounded-full font-bold">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Live Demo
-                    </Button>
-                    <Button size="sm" className="bg-white/20 glass text-white hover:bg-white/30 magnetic-bold rounded-full font-bold">
-                      <Github className="h-4 w-4 mr-2" />
-                      Source
-                    </Button>
+              <CardContent className="p-8 sm:p-10 relative z-10">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-14 h-14 bg-gradient-accent rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <metric.icon className="h-7 w-7 text-white" />
                   </div>
+                  <span className={`text-sm font-semibold px-3 py-1 rounded-full ${
+                    metric.change.startsWith('+') ? 'bg-success/20 text-success' : 'bg-destructive/20 text-destructive'
+                  }`}>
+                    {metric.change}
+                  </span>
                 </div>
-              </div>
-              
-              <CardContent className="p-8">
-                <div className={`text-sm font-bold mb-3 text-gradient-primary`}>{project.category}</div>
-                <h3 className="text-2xl font-black mb-4 group-hover:text-gradient-primary transition-colors duration-300">{project.title}</h3>
-                <p className="text-muted-foreground mb-6 text-base leading-relaxed">{project.description}</p>
                 
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, idx) => (
-                    <span 
-                      key={idx}
-                      className="px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary text-sm rounded-full font-bold border border-primary/20 hover:scale-105 transition-transform duration-200"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-accent transition-colors duration-300">{metric.title}</h3>
+                <div className="text-3xl sm:text-4xl font-black mb-4 text-gradient-accent">{metric.value}</div>
+                <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">{metric.description}</p>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <Button size="lg" className="bg-gradient-rainbow hover:opacity-90 text-white font-bold px-12 py-6 text-xl magnetic-bold rounded-full shadow-2xl neon-glow">
-            <Zap className="mr-3 h-6 w-6" />
-            Explore All Projects
-          </Button>
+        {/* Integrations Section */}
+        <div className="animate-fade-up delay-400">
+          <h3 className="heading-md text-center mb-12 sm:mb-16 text-foreground">
+            Multi-Chain <span className="text-gradient-secondary">Integrations</span>
+          </h3>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
+            {integrations.map((integration, index) => (
+              <Card 
+                key={integration.name} 
+                className={`border-2 border-muted hover:border-secondary/30 transition-all duration-300 scale-hover animate-fade-up delay-${(index + 1) * 100} group bg-card/50 backdrop-blur-sm`}
+              >
+                <CardContent className="p-6 sm:p-8 text-center">
+                  <h4 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-secondary transition-colors duration-300">{integration.name}</h4>
+                  <p className="text-muted-foreground mb-4 text-sm sm:text-base">{integration.type}</p>
+                  <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${
+                    integration.status === 'Live' 
+                      ? 'bg-success/20 text-success' 
+                      : 'bg-warning/20 text-warning'
+                  }`}>
+                    {integration.status}
+                  </span>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button className="btn-secondary scale-hover">
+              <ExternalLink className="mr-3 h-5 w-5" />
+              View Full Analytics Dashboard
+            </Button>
+          </div>
         </div>
       </div>
     </section>
