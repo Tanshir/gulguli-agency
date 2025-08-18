@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,11 +15,16 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 glass border-b border-white/10">
+    <header className="fixed top-0 w-full z-50 glass border-b border-white/20 backdrop-blur-md">
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-electric">PixelCraft</h1>
+            <div className="flex items-center space-x-2">
+              <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center rotate-slow">
+                <Sparkles className="h-6 w-6 text-white" />
+              </div>
+              <h1 className="text-3xl font-bold text-gradient-primary">CreativeStudio</h1>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
@@ -29,16 +34,17 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  className="text-muted-foreground hover:text-primary transition-all duration-300 font-medium text-lg relative group"
                 >
                   {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
             </div>
           </nav>
 
           <div className="hidden md:block">
-            <Button className="bg-electric hover:opacity-90 text-white font-medium">
+            <Button className="bg-gradient-primary hover:opacity-90 text-white font-semibold px-8 py-3 text-lg magnetic-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
               Get Started
             </Button>
           </div>
@@ -49,28 +55,29 @@ const Header = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
+              className="hover:bg-primary/10"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 border-t border-white/10">
+          <div className="md:hidden border-t border-white/20">
+            <div className="px-2 pt-4 pb-6 space-y-3">
               {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  className="block px-4 py-3 text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all duration-200 rounded-lg font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <div className="px-3 py-2">
-                <Button className="w-full bg-electric hover:opacity-90 text-white font-medium">
+              <div className="px-4 py-3">
+                <Button className="w-full bg-gradient-primary hover:opacity-90 text-white font-semibold py-3 magnetic-bold rounded-full">
                   Get Started
                 </Button>
               </div>
