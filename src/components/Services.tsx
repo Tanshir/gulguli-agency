@@ -26,17 +26,11 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-16 sm:py-20 lg:py-24 bg-muted/30 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-secondary rounded-full opacity-10 blur-3xl float-animation"></div>
-        <div className="absolute bottom-10 left-10 w-48 h-48 bg-gradient-accent rounded-full opacity-5 blur-2xl float-animation" style={{ animationDelay: '-3s' }}></div>
-      </div>
-
-      <div className="container-xl responsive-padding relative z-10">
-        <div className="text-center mb-16 sm:mb-20">
-          <h2 className="heading-lg mb-6 sm:mb-8 text-foreground animate-fade-up">
-            Our <span className="text-gradient-secondary">Services</span>
+    <section id="services" className="section-padding bg-muted">
+      <div className="container-custom">
+        <div className="text-center mb-16 lg:mb-20">
+          <h2 className="heading-lg mb-6 text-foreground animate-fade-up">
+            Our <span className="bg-primary text-primary-foreground px-4 py-2">Services</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-up delay-200">
             We offer comprehensive web design and development services to help your 
@@ -44,33 +38,30 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {services.map((service, index) => (
             <Card 
               key={service.title} 
-              className={`border-2 border-muted hover:border-primary/30 transition-all duration-500 scale-hover animate-fade-up delay-${(index + 1) * 200} group bg-card/70 backdrop-blur-sm overflow-hidden relative`}
+              className={`border-2 border-border hover:border-primary transition-all duration-300 hover-lift animate-fade-up delay-${(index + 1) * 200} group bg-card`}
             >
-              {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <CardContent className="p-8 sm:p-10 relative z-10">
-                <div className="w-20 h-20 bg-gradient-accent rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="h-10 w-10 text-white" />
+              <CardContent className="p-8 lg:p-10">
+                <div className="w-16 h-16 bg-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="h-8 w-8 text-primary-foreground" />
                 </div>
                 
-                <h3 className="heading-md mb-6 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
-                <p className="text-muted-foreground mb-8 leading-relaxed text-base sm:text-lg">{service.description}</p>
+                <h3 className="heading-sm mb-4 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">{service.description}</p>
                 
                 <ul className="space-y-3 mb-8">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm sm:text-base">
-                      <div className="w-2 h-2 bg-secondary rounded-full mr-3 flex-shrink-0"></div>
+                    <li key={idx} className="flex items-center text-sm">
+                      <div className="w-2 h-2 bg-primary mr-3 flex-shrink-0"></div>
                       <span className="text-muted-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 
-                <Button variant="ghost" className="group/btn w-full justify-between text-foreground hover:text-primary font-semibold">
+                <Button variant="ghost" className="group/btn w-full justify-between text-foreground hover:text-primary font-semibold p-0">
                   Learn More
                   <ArrowRight className="h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
