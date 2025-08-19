@@ -28,28 +28,34 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-up">
-            What Our <span className="text-electric">Clients Say</span>
+    <section className="py-16 sm:py-20 lg:py-24 bg-muted/30 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-48 h-48 bg-gradient-primary rounded-full opacity-10 blur-3xl float-animation"></div>
+        <div className="absolute bottom-20 right-20 w-64 h-64 bg-gradient-secondary rounded-full opacity-8 blur-3xl float-animation" style={{ animationDelay: '-4s' }}></div>
+      </div>
+
+      <div className="container-xl responsive-padding relative z-10">
+        <div className="text-center mb-16 sm:mb-20">
+          <h2 className="heading-lg mb-6 sm:mb-8 text-foreground animate-fade-up">
+            What Our <span className="text-gradient-secondary">Clients Say</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-up delay-100">
-            Don't just take our word for it. Here's what our satisfied clients have to say about our work
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-up delay-200">
+            Don't just take our word for it. Here's what our satisfied clients have to say about our work.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
           {testimonials.map((testimonial, index) => (
             <Card 
               key={testimonial.name} 
-              className={`hover-lift glass border-white/20 animate-fade-up delay-${(index + 1) * 100}`}
+              className={`border-2 border-muted hover:border-secondary/30 transition-all duration-300 scale-hover animate-fade-up delay-${(index + 1) * 100} bg-card/50 backdrop-blur-sm`}
             >
-              <CardContent className="p-6">
+              <CardContent className="p-6 sm:p-8">
                 {/* Stars */}
                 <div className="flex mb-4">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="h-5 w-5 text-primary fill-current" />
                   ))}
                 </div>
                 

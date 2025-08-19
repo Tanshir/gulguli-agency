@@ -1,27 +1,27 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Zap, Shield, Globe, ArrowRight } from "lucide-react";
+import { Palette, Code, Smartphone, ArrowRight } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
-      icon: Zap,
-      title: "Vault Management",
-      description: "Create and manage over-collateralized vaults with multiple crypto assets for maximum security.",
-      features: ["Multi-asset collateral", "Dynamic risk management", "Automated liquidation protection"],
+      icon: Palette,
+      title: "Web Design",
+      description: "Beautiful, modern designs that capture your brand essence and engage your audience effectively.",
+      features: ["Custom UI/UX Design", "Brand Identity", "Responsive Layouts"],
     },
     {
-      icon: Shield,
-      title: "Governance Participation",
-      description: "Participate in Economic Committee decisions and help shape the future of IST protocol.",
-      features: ["Community voting", "Proposal submission", "Economic parameter control"],
+      icon: Code,
+      title: "Web Development",
+      description: "Fast, secure, and scalable websites built with the latest technologies and best practices.",
+      features: ["React & TypeScript", "Performance Optimization", "SEO Ready"],
     },
     {
-      icon: Globe,
-      title: "Cross-Chain Integration",
-      description: "Seamlessly move IST across multiple blockchain networks with our interchain technology.",
-      features: ["Multi-chain support", "Bridge functionality", "Universal compatibility"],
+      icon: Smartphone,
+      title: "Mobile First",
+      description: "Mobile-optimized experiences that look perfect on any device, from phones to desktops.",
+      features: ["Responsive Design", "Touch Optimization", "Cross-browser Testing"],
     },
   ];
 
@@ -36,11 +36,11 @@ const Services = () => {
       <div className="container-xl responsive-padding relative z-10">
         <div className="text-center mb-16 sm:mb-20">
           <h2 className="heading-lg mb-6 sm:mb-8 text-foreground animate-fade-up">
-            Our <span className="text-gradient-secondary">Ecosystem</span>
+            Our <span className="text-gradient-secondary">Services</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-up delay-200">
-            Discover the comprehensive tools and features that make IST the most robust stablecoin 
-            in the multi-chain ecosystem.
+            We offer comprehensive web design and development services to help your 
+            business stand out in the digital landscape.
           </p>
         </div>
 

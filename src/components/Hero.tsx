@@ -30,28 +30,29 @@ const Hero = () => {
 
       <div className="container-xl responsive-padding relative z-10">
         <div className="max-w-4xl">
-          {/* Main Headline - matching the bold typography style */}
+          {/* Main Headline */}
           <h1 className="heading-xl mb-8 sm:mb-12 text-foreground animate-fade-up leading-[0.9] tracking-tight">
-            A STABLE TOKEN<br />
-            BUILT FOR THE<br />
-            <span className="text-gradient-secondary">MULTI-CHAIN</span><br />
-            WORLD
+            WE CREATE<br />
+            STUNNING<br />
+            <span className="text-gradient-secondary">WEBSITES</span><br />
+            THAT CONVERT
           </h1>
 
           {/* Description */}
           <p className="text-lg sm:text-xl lg:text-2xl text-foreground/80 mb-12 sm:mb-16 max-w-2xl leading-relaxed font-medium animate-fade-up delay-200">
-            IST is over-collateralized with a wide-range of crypto assets. It's decentralized and risk-managed via a community voted Economic Committee. It is the stabletoken for the interchain.
+            Transform your business with cutting-edge web design. We craft beautiful, 
+            responsive websites that engage users and drive results for your brand.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-fade-up delay-300">
             <Button className="btn-primary text-lg px-8 py-4 scale-hover">
-              Launch App
+              Start Your Project
             </Button>
             
             <Button variant="ghost" className="btn-secondary text-lg px-8 py-4 scale-hover">
               <Play className="mr-3 h-5 w-5" />
-              Learn about vaults
+              View Our Work
               <ArrowRight className="ml-3 h-5 w-5" />
             </Button>
           </div>

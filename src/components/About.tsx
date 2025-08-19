@@ -1,28 +1,28 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield, Layers, Users, TrendingUp } from "lucide-react";
+import { Zap, Users, Award, TrendingUp } from "lucide-react";
 
 const About = () => {
   const features = [
     {
-      icon: Shield,
-      title: "Over-Collateralized",
-      description: "Backed by a diverse range of crypto assets for maximum stability and security.",
-    },
-    {
-      icon: Layers,
-      title: "Multi-Chain Ready",
-      description: "Built for the interchain world with seamless cross-chain functionality.",
+      icon: Zap,
+      title: "Fast Delivery",
+      description: "Quick turnaround times without compromising on quality or attention to detail.",
     },
     {
       icon: Users,
-      title: "Community Governed",
-      description: "Risk-managed via community voted Economic Committee decisions.",
+      title: "Expert Team",
+      description: "Skilled designers and developers with years of industry experience.",
+    },
+    {
+      icon: Award,
+      title: "Award Winning",
+      description: "Recognized for excellence in web design and user experience.",
     },
     {
       icon: TrendingUp,
-      title: "Stable Value",
-      description: "Designed to maintain price stability across market conditions.",
+      title: "Results Driven",
+      description: "Websites that not only look great but also drive conversions and growth.",
     }
   ];
 
@@ -37,11 +37,11 @@ const About = () => {
       <div className="container-xl responsive-padding relative z-10">
         <div className="text-center mb-16 sm:mb-20">
           <h2 className="heading-lg mb-6 sm:mb-8 text-foreground animate-fade-up">
-            Why Choose <span className="text-gradient-secondary">IST</span>?
+            Why Choose <span className="text-gradient-secondary">PixelCraft</span>?
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-up delay-200">
-            Experience the future of stable tokens with our innovative multi-chain approach, 
-            designed for the decentralized economy.
+            We combine creativity with technical expertise to deliver websites that 
+            make a lasting impression and drive business growth.
           </p>
         </div>
 
@@ -65,10 +65,10 @@ const About = () => {
         {/* Stats Section */}
         <div className="mt-16 sm:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
           {[
-            { number: "$50M+", label: "Total Value Locked", color: "text-gradient-secondary" },
-            { number: "99.9%", label: "Uptime", color: "text-gradient-accent" },
-            { number: "15+", label: "Supported Chains", color: "text-gradient-secondary" },
-            { number: "100K+", label: "Active Users", color: "text-gradient-accent" }
+            { number: "500+", label: "Projects Completed", color: "text-gradient-secondary" },
+            { number: "98%", label: "Client Satisfaction", color: "text-gradient-accent" },
+            { number: "5+", label: "Years Experience", color: "text-gradient-secondary" },
+            { number: "50+", label: "Happy Clients", color: "text-gradient-accent" }
           ].map((stat, index) => (
             <div key={stat.label} className={`text-center animate-fade-up delay-${(index + 1) * 100}`}>
               <div className={`text-3xl sm:text-4xl lg:text-5xl font-black mb-2 ${stat.color}`}>{stat.number}</div>
