@@ -13,7 +13,11 @@ import ECommerce from "./pages/services/ECommerce";
 import SEOOptimization from "./pages/services/SEOOptimization";
 import AboutUs from "./pages/company/AboutUs";
 import OurTeam from "./pages/company/OurTeam";
+import Blog from "./pages/company/Blog";
 import FAQ from "./pages/support/FAQ";
+import Contact from "./pages/support/Contact";
+import HelpCenter from "./pages/support/HelpCenter";
+import Documentation from "./pages/support/Documentation";
 import TermsOfService from "./pages/legal/TermsOfService";
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
 import CookiesPolicy from "./pages/legal/CookiesPolicy";
@@ -39,9 +43,13 @@ const App = () => (
             {/* Company Routes */}
             <Route path="/company/about-us" element={<AboutUs />} />
             <Route path="/company/our-team" element={<OurTeam />} />
+            <Route path="/company/blog" element={<Blog />} />
             
             {/* Support Routes */}
             <Route path="/support/faq" element={<FAQ />} />
+            <Route path="/support/contact" element={<Contact />} />
+            <Route path="/support/help-center" element={<HelpCenter />} />
+            <Route path="/support/documentation" element={<Documentation />} />
             
             {/* Legal Routes */}
             <Route path="/legal/terms-of-service" element={<TermsOfService />} />

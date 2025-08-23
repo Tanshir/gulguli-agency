@@ -2,16 +2,26 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const navigation = [
-    { name: "Services", href: "#services" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Services", href: "#services", isHash: true },
+    { name: "Portfolio", href: "#portfolio", isHash: true },
+    { name: "About", href: "#about", isHash: true },
+    { name: "Contact", href: "#contact", isHash: true },
   ];
+
+  const handleNavClick = (href: string, isHash: boolean) => {
+    if (isHash && location.pathname !== '/') {
+      // If we're not on the home page and clicking a hash link, go to home first
+      window.location.href = '/' + href;
+    }
+    setIsOpen(false);
+  };
 
   return (
     <header className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b">
@@ -19,7 +29,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div className="flex items-center space-x-3">
+            <Link to="/" className="flex items-center space-x-3">
               <div className="w-8 h-8 lg:w-10 lg:h-10 bg-primary flex items-center justify-center">
                 <span className="text-primary-foreground font-black text-sm lg:text-base">P</span>
               </div>
@@ -27,29 +37,42 @@ const Header = () => {
                 <span className="text-xs lg:text-sm font-medium text-muted-foreground">PIXEL</span>
                 <span className="text-xs lg:text-sm font-black text-foreground -mt-1">CRAFT</span>
               </div>
-            </div>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:block">
             <div className="flex items-center space-x-12">
               {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-foreground hover:text-muted-foreground transition-colors duration-200 font-medium text-base"
-                >
-                  {item.name}
-                </a>
+                <div key={item.name}>
+                  {item.isHash ? (
+                    <a
+                      href={item.href}
+                      onClick={() => handleNavClick(item.href, item.isHash)}
+                      className="text-foreground hover:text-muted-foreground transition-colors duration-200 font-medium text-base cursor-pointer"
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className="text-foreground hover:text-muted-foreground transition-colors duration-200 font-medium text-base"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </div>
               ))}
             </div>
           </nav>
 
           {/* CTA */}
           <div className="hidden lg:flex items-center">
-            <Button className="btn-primary text-sm lg:text-base px-6 py-3">
-              Start Project
-            </Button>
+            <Link to="/support/contact">
+              <Button className="btn-primary text-sm lg:text-base px-6 py-3">
+                Start Project
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -70,19 +93,32 @@ const Header = () => {
           <div className="lg:hidden border-t">
             <div className="px-2 pt-4 pb-6 space-y-3">
               {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block px-4 py-3 text-foreground hover:bg-muted transition-all duration-200 font-medium"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </a>
+                <div key={item.name}>
+                  {item.isHash ? (
+                    <a
+                      href={item.href}
+                      onClick={() => handleNavClick(item.href, item.isHash)}
+                      className="block px-4 py-3 text-foreground hover:bg-muted transition-all duration-200 font-medium cursor-pointer"
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className="block px-4 py-3 text-foreground hover:bg-muted transition-all duration-200 font-medium"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </div>
               ))}
               <div className="px-4 py-3">
-                <Button className="w-full btn-primary">
-                  Start Project
-                </Button>
+                <Link to="/support/contact">
+                  <Button className="w-full btn-primary">
+                    Start Project
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
