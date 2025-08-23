@@ -9,19 +9,11 @@ const Header = () => {
   const location = useLocation();
 
   const navigation = [
-    { name: "Services", href: "#services", isHash: true },
-    { name: "Portfolio", href: "#portfolio", isHash: true },
-    { name: "About", href: "#about", isHash: true },
-    { name: "Contact", href: "#contact", isHash: true },
+    { name: "Services", href: "/services" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
-
-  const handleNavClick = (href: string, isHash: boolean) => {
-    if (isHash && location.pathname !== '/') {
-      // If we're not on the home page and clicking a hash link, go to home first
-      window.location.href = '/' + href;
-    }
-    setIsOpen(false);
-  };
 
   return (
     <header className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b">
@@ -44,31 +36,20 @@ const Header = () => {
           <nav className="hidden lg:block">
             <div className="flex items-center space-x-12">
               {navigation.map((item) => (
-                <div key={item.name}>
-                  {item.isHash ? (
-                    <a
-                      href={item.href}
-                      onClick={() => handleNavClick(item.href, item.isHash)}
-                      className="text-foreground hover:text-muted-foreground transition-colors duration-200 font-medium text-base cursor-pointer"
-                    >
-                      {item.name}
-                    </a>
-                  ) : (
-                    <Link
-                      to={item.href}
-                      className="text-foreground hover:text-muted-foreground transition-colors duration-200 font-medium text-base"
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                </div>
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="text-foreground hover:text-muted-foreground transition-colors duration-200 font-medium text-base"
+                >
+                  {item.name}
+                </Link>
               ))}
             </div>
           </nav>
 
           {/* CTA */}
           <div className="hidden lg:flex items-center">
-            <Link to="/support/contact">
+            <Link to="/contact">
               <Button className="btn-primary text-sm lg:text-base px-6 py-3">
                 Start Project
               </Button>
@@ -93,29 +74,18 @@ const Header = () => {
           <div className="lg:hidden border-t">
             <div className="px-2 pt-4 pb-6 space-y-3">
               {navigation.map((item) => (
-                <div key={item.name}>
-                  {item.isHash ? (
-                    <a
-                      href={item.href}
-                      onClick={() => handleNavClick(item.href, item.isHash)}
-                      className="block px-4 py-3 text-foreground hover:bg-muted transition-all duration-200 font-medium cursor-pointer"
-                    >
-                      {item.name}
-                    </a>
-                  ) : (
-                    <Link
-                      to={item.href}
-                      className="block px-4 py-3 text-foreground hover:bg-muted transition-all duration-200 font-medium"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                </div>
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="block px-4 py-3 text-foreground hover:bg-muted transition-all duration-200 font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
               ))}
               <div className="px-4 py-3">
-                <Link to="/support/contact">
-                  <Button className="w-full btn-primary">
+                <Link to="/contact">
+                  <Button className="w-full btn-primary" onClick={() => setIsOpen(false)}>
                     Start Project
                   </Button>
                 </Link>
