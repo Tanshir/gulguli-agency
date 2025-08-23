@@ -31,10 +31,10 @@ const Testimonials = () => {
     <section className="section-padding bg-background">
       <div className="container-custom">
         <div className="text-center mb-16 lg:mb-20">
-          <h2 className="heading-lg mb-6 text-foreground animate-fade-up">
-            What Our <span className="bg-primary text-primary-foreground px-4 py-2">Clients Say</span>
+          <h2 className="heading-lg mb-6 text-foreground">
+            What Our <span className="bg-foreground text-background px-4 py-2">Clients Say</span>
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-up delay-200">
+          <p className="text-lg sm:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
             Don't just take our word for it. Here's what our satisfied clients have to say about our work.
           </p>
         </div>
@@ -43,16 +43,16 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <Card 
               key={testimonial.name} 
-              className={`border-2 border-border hover:border-primary transition-all duration-300 hover-lift animate-fade-up delay-${(index + 1) * 100} bg-card`}
+              className="border-2 border-border hover:border-foreground transition-all duration-300 hover-lift bg-card"
             >
               <CardContent className="p-6 lg:p-8">
                 <div className="flex mb-4">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-primary fill-current" />
+                    <Star key={i} className="h-5 w-5 text-foreground fill-current" />
                   ))}
                 </div>
                 
-                <p className="text-muted-foreground mb-6 leading-relaxed text-sm lg:text-base">
+                <p className="text-foreground/70 mb-6 leading-relaxed text-sm lg:text-base">
                   "{testimonial.content}"
                 </p>
                 
@@ -60,11 +60,11 @@ const Testimonials = () => {
                   <img 
                     src={testimonial.image} 
                     alt={testimonial.name}
-                    className="w-12 h-12 object-cover mr-4 border-2 border-border"
+                    className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-border"
                   />
                   <div>
-                    <div className="font-semibold text-sm">{testimonial.name}</div>
-                    <div className="text-xs text-muted-foreground">{testimonial.role}</div>
+                    <div className="font-semibold text-sm text-foreground">{testimonial.name}</div>
+                    <div className="text-xs text-foreground/70">{testimonial.role}</div>
                   </div>
                 </div>
               </CardContent>

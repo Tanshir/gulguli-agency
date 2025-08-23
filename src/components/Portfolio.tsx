@@ -32,10 +32,10 @@ const Portfolio = () => {
     <section id="portfolio" className="section-padding bg-muted">
       <div className="container-custom">
         <div className="text-center mb-16 lg:mb-20">
-          <h2 className="heading-lg mb-6 text-foreground animate-fade-up">
-            Our <span className="bg-primary text-primary-foreground px-4 py-2">Portfolio</span>
+          <h2 className="heading-lg mb-6 text-foreground">
+            Our <span className="bg-foreground text-background px-4 py-2">Portfolio</span>
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-up delay-200">
+          <p className="text-lg sm:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
             Explore our latest projects showcasing creativity, functionality, 
             and results-driven design solutions.
           </p>
@@ -45,16 +45,16 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.title} 
-              className={`border-2 border-border hover:border-primary transition-all duration-300 hover-lift animate-fade-up delay-${(index + 1) * 150} group bg-card overflow-hidden`}
+              className="border-2 border-border hover:border-foreground transition-all duration-300 hover-lift bg-card overflow-hidden"
             >
               <div className="relative overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-48 sm:h-56 object-cover hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"></div>
-                <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-foreground/0 hover:bg-foreground/10 transition-colors duration-300"></div>
+                <div className="absolute top-4 right-4 flex space-x-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                   <Button size="sm" variant="secondary" className="w-8 h-8 p-0 bg-background">
                     <Eye className="h-4 w-4" />
                   </Button>
@@ -65,15 +65,15 @@ const Portfolio = () => {
               </div>
               
               <CardContent className="p-6 lg:p-8">
-                <span className="inline-block px-3 py-1 bg-muted text-muted-foreground text-xs font-semibold mb-4 uppercase tracking-wide">
+                <span className="inline-block px-3 py-1 bg-muted text-foreground/70 text-xs font-semibold mb-4 uppercase tracking-wide border border-border">
                   {project.category}
                 </span>
-                <h3 className="heading-sm mb-3 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-4 text-sm">{project.description}</p>
+                <h3 className="heading-sm mb-3 text-foreground">{project.title}</h3>
+                <p className="text-foreground/70 leading-relaxed mb-4 text-sm">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
-                    <span key={tech} className="px-2 py-1 bg-muted text-muted-foreground text-xs font-medium">
+                    <span key={tech} className="px-2 py-1 bg-muted text-foreground/70 text-xs font-medium border border-border">
                       {tech}
                     </span>
                   ))}
@@ -83,7 +83,7 @@ const Portfolio = () => {
           ))}
         </div>
 
-        <div className="text-center animate-fade-up delay-400">
+        <div className="text-center">
           <Button className="btn-secondary hover-scale">
             <ExternalLink className="mr-2 h-5 w-5" />
             View All Projects

@@ -30,10 +30,10 @@ const About = () => {
     <section id="about" className="section-padding bg-background">
       <div className="container-custom">
         <div className="text-center mb-16 lg:mb-20">
-          <h2 className="heading-lg mb-6 text-foreground animate-fade-up">
-            Why Choose <span className="bg-primary text-primary-foreground px-4 py-2">PixelCraft</span>?
+          <h2 className="heading-lg mb-6 text-foreground">
+            Why Choose <span className="bg-foreground text-background px-4 py-2">PixelCraft</span>?
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-up delay-200">
+          <p className="text-lg sm:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
             We combine creativity with technical expertise to deliver websites that 
             make a lasting impression and drive business growth.
           </p>
@@ -43,14 +43,14 @@ const About = () => {
           {features.map((feature, index) => (
             <Card 
               key={feature.title} 
-              className={`border-2 border-border hover:border-primary transition-all duration-300 hover-lift animate-fade-up delay-${(index + 1) * 100} group bg-card text-center`}
+              className="border-2 border-border hover:border-foreground transition-all duration-300 hover-lift bg-card text-center"
             >
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-primary flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className="h-8 w-8 text-primary-foreground" />
+                <div className="w-16 h-16 bg-foreground flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300">
+                  <feature.icon className="h-8 w-8 text-background" />
                 </div>
-                <h3 className="heading-sm mb-4 group-hover:text-primary transition-colors duration-300">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed text-sm">{feature.description}</p>
+                <h3 className="heading-sm mb-4 text-foreground">{feature.title}</h3>
+                <p className="text-foreground/70 leading-relaxed text-sm">{feature.description}</p>
               </CardContent>
             </Card>
           ))}

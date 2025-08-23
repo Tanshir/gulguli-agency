@@ -25,7 +25,7 @@ const PageLayout = ({ children, title, description, keywords }: PageLayoutProps)
         <meta name="twitter:title" content={`${title} | PixelCraft`} />
         <meta name="twitter:description" content={description} />
       </Helmet>
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-background text-foreground">
         <Header />
         <main className="pt-20">
           {children}
