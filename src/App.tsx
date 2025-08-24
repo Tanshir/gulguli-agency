@@ -18,6 +18,7 @@ import SEOOptimization from "./pages/services/SEOOptimization";
 import AboutUs from "./pages/company/AboutUs";
 import OurTeam from "./pages/company/OurTeam";
 import Blog from "./pages/company/Blog";
+import Careers from "./pages/company/Careers";
 import FAQ from "./pages/support/FAQ";
 import ContactSupport from "./pages/support/Contact";
 import HelpCenter from "./pages/support/HelpCenter";
@@ -54,6 +55,7 @@ const App = () => (
             <Route path="/company/about-us" element={<AboutUs />} />
             <Route path="/company/our-team" element={<OurTeam />} />
             <Route path="/company/blog" element={<Blog />} />
+            <Route path="/company/careers" element={<Careers />} />
             
             {/* Support Routes */}
             <Route path="/support/faq" element={<FAQ />} />
