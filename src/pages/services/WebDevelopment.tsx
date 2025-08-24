@@ -52,37 +52,37 @@ const WebDevelopment = () => {
       keywords="web development, React, TypeScript, Node.js, full-stack development, custom websites"
     >
       {/* Hero Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
             Web Development
-            <span className="block text-gray-400">Built to Last</span>
+            <span className="block text-muted-foreground">Built to Last</span>
           </h1>
-          <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Custom web development solutions using cutting-edge technologies to create fast, secure, and scalable websites.
           </p>
-          <Button className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg font-semibold">
+          <Button className="btn-primary px-8 py-3 text-lg font-semibold">
             Start Building
           </Button>
         </div>
       </section>
 
       {/* Technologies Section */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Technologies We Use</h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Technologies We Use</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               We leverage the latest technologies to build modern, efficient web applications.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {technologies.map((tech, index) => (
-              <Card key={tech.name} className="bg-black border-gray-800 hover:border-white transition-colors duration-300">
+              <Card key={tech.name} className="bg-card border-border hover:border-foreground transition-colors duration-300">
                 <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-bold mb-3">{tech.name}</h3>
-                  <p className="text-gray-400 text-sm">{tech.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-foreground">{tech.name}</h3>
+                  <p className="text-muted-foreground text-sm">{tech.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -90,11 +90,11 @@ const WebDevelopment = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={feature.title} className="bg-black border-gray-800 hover:border-white transition-colors duration-300">
+              <Card key={feature.title} className="bg-card border-border hover:border-foreground transition-colors duration-300">
                 <CardContent className="p-8">
-                  <feature.icon className="h-12 w-12 text-white mb-6" />
-                  <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
+                  <feature.icon className="h-12 w-12 text-foreground mb-6" />
+                  <h3 className="text-xl font-bold mb-4 text-foreground">{feature.title}</h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -103,13 +103,13 @@ const WebDevelopment = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Build Something Amazing?</h2>
-          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Ready to Build Something Amazing?</h2>
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Let's discuss your project requirements and create a custom solution that fits your needs.
           </p>
-          <Button className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg font-semibold">
+          <Button className="btn-primary px-8 py-3 text-lg font-semibold">
             Get Quote
           </Button>
         </div>

@@ -70,11 +70,11 @@ const Blog = () => {
       description="Stay updated with the latest insights, tips, and trends in web design, development, and digital marketing from the PixelCraft team."
       keywords="web design blog, development insights, SEO tips, UX design, digital marketing"
     >
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Blog</h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Our Blog</h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Insights, tips, and trends from our team of web design and development experts.
             </p>
           </div>
@@ -85,7 +85,7 @@ const Blog = () => {
               <Button
                 key={category}
                 variant={category === "All" ? "default" : "outline"}
-                className={category === "All" ? "bg-white text-black" : "border-gray-600 text-gray-400 hover:border-white hover:text-white"}
+                className={category === "All" ? "btn-primary" : "border-border text-foreground hover:border-foreground"}
               >
                 {category}
               </Button>
@@ -95,22 +95,22 @@ const Blog = () => {
           {/* Blog Posts Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
-              <Card key={post.id} className="bg-gray-900 border-gray-800 hover:border-white transition-colors duration-300 group">
+              <Card key={post.id} className="bg-card border-border hover:border-foreground transition-colors duration-300 group">
                 <CardHeader>
-                  <div className="flex items-center gap-2 text-sm text-gray-400 mb-3">
-                    <span className="bg-gray-800 px-2 py-1 rounded text-xs">{post.category}</span>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                    <span className="bg-muted px-2 py-1 rounded text-xs text-foreground">{post.category}</span>
                     <span>•</span>
                     <span>{post.readTime}</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-gray-300 transition-colors">
+                  <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-muted-foreground transition-colors">
                     {post.title}
                   </h3>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-400 mb-6 line-clamp-3">{post.excerpt}</p>
+                  <p className="text-muted-foreground mb-6 line-clamp-3">{post.excerpt}</p>
                   
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-sm text-gray-400">
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
                       <div className="flex items-center gap-1">
                         <User className="h-4 w-4" />
                         <span>{post.author}</span>
@@ -121,7 +121,7 @@ const Blog = () => {
                       </div>
                     </div>
                     
-                    <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-0">
+                    <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground p-0">
                       <ArrowRight className="h-4 w-4" />
                     </Button>
                   </div>
@@ -132,7 +132,7 @@ const Blog = () => {
 
           {/* Load More */}
           <div className="text-center mt-12">
-            <Button className="bg-white text-black hover:bg-gray-200 px-8 py-3">
+            <Button className="btn-primary px-8 py-3">
               Load More Articles
             </Button>
           </div>
