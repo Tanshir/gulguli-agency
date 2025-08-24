@@ -36,36 +36,36 @@ const FAQ = () => {
       description="Find answers to common questions about PixelCraft's web design and development services, pricing, timelines, and support."
       keywords="FAQ, web design questions, pricing, timelines, support, frequently asked questions"
     >
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Frequently Asked Questions</h1>
-            <p className="text-xl text-gray-400">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Frequently Asked Questions</h1>
+            <p className="text-xl text-muted-foreground">
               Find answers to common questions about our services, process, and pricing.
             </p>
           </div>
 
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <Card key={index} className="bg-gray-900 border-gray-800">
+              <Card key={index} className="bg-card border-border">
                 <CardHeader>
-                  <CardTitle className="text-lg">{faq.question}</CardTitle>
+                  <CardTitle className="text-lg text-foreground">{faq.question}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-400">{faq.answer}</p>
+                  <p className="text-muted-foreground">{faq.answer}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
 
           <div className="text-center mt-16">
-            <h2 className="text-2xl font-bold mb-4">Still have questions?</h2>
-            <p className="text-gray-400 mb-6">
+            <h2 className="text-2xl font-bold mb-4 text-foreground">Still have questions?</h2>
+            <p className="text-muted-foreground mb-6">
               Can't find what you're looking for? We're here to help.
             </p>
             <a 
               href="/support/contact" 
-              className="inline-block bg-white text-black px-8 py-3 font-semibold hover:bg-gray-200 transition-colors"
+              className="inline-block bg-foreground text-background px-8 py-3 font-semibold hover:bg-foreground/90 transition-colors"
             >
               Contact Support
             </a>

@@ -45,38 +45,38 @@ const ECommerce = () => {
       keywords="e-commerce, online store, shopping cart, payment processing, inventory management"
     >
       {/* Hero Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
             E-Commerce
-            <span className="block text-gray-400">Solutions</span>
+            <span className="block text-muted-foreground">Solutions</span>
           </h1>
-          <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Complete e-commerce solutions that drive sales and provide exceptional shopping experiences for your customers.
           </p>
-          <Button className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg font-semibold">
+          <Button className="bg-foreground text-background hover:bg-foreground/90 px-8 py-3 text-lg font-semibold">
             Launch Your Store
           </Button>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Everything You Need to Sell Online</h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Everything You Need to Sell Online</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               From payment processing to inventory management, we provide all the tools you need.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={feature.title} className="bg-black border-gray-800 hover:border-white transition-colors duration-300">
+              <Card key={feature.title} className="bg-card border-border hover:border-foreground transition-colors duration-300">
                 <CardContent className="p-8">
-                  <feature.icon className="h-12 w-12 text-white mb-6" />
-                  <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
+                  <feature.icon className="h-12 w-12 text-foreground mb-6" />
+                  <h3 className="text-xl font-bold mb-4 text-foreground">{feature.title}</h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -85,20 +85,20 @@ const ECommerce = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold mb-2">300%</div>
-              <div className="text-gray-400">Average Sales Increase</div>
+              <div className="text-4xl font-bold mb-2 text-foreground">300%</div>
+              <div className="text-muted-foreground">Average Sales Increase</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">99.9%</div>
-              <div className="text-gray-400">Uptime Guarantee</div>
+              <div className="text-4xl font-bold mb-2 text-foreground">99.9%</div>
+              <div className="text-muted-foreground">Uptime Guarantee</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">24/7</div>
-              <div className="text-gray-400">Support Available</div>
+              <div className="text-4xl font-bold mb-2 text-foreground">24/7</div>
+              <div className="text-muted-foreground">Support Available</div>
             </div>
           </div>
         </div>
